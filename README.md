@@ -17,4 +17,12 @@ Continuous Testing pipeline using GCP (Spring Boot/Java/Maven/Selenium/TestNG)
       1. Add the necessary dependancies in pom.xml (for build/compile/test process)
       2. Make sure all imports of the dependancies are working fine
       3. Create sample test cases and execute - maven package lifecycle
+      
+ **Step5:**
+ 
+      1. Create Local Browsers configuration -> **@Bean** for chrome,firefox,edge,headlessChrome and headlessFirefox -> @Profile("local")
+      2. Create Docker Browsers configuration -> **@Bean** for chrome and firefox -> @Profile("docker-grid")
+      3. Create Selenoid Browsers configuration -> **@Bean** for chrome,firefox and edge -> @Profile("selenoid-grid")
+      
+ 
 
