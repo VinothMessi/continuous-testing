@@ -10,10 +10,13 @@ import lombok.NoArgsConstructor;
 
 @Lazy
 @Configuration
-@ConfigurationProperties("app")
+@ConfigurationProperties("hub")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AppDetails {
-    String url;
+public class HubDetails {
+    String protocol;
+    String host;
+    int port;
+    String endpoint;
 }

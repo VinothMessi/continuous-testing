@@ -1,6 +1,6 @@
 package com.continuoustesting;
 
-import com.continuoustesting.properties.AppDetails;
+import com.continuoustesting.properties.ProjectDetails;
 
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,5 +13,5 @@ public class BaseTest extends AbstractTestNGSpringContextTests {
     protected WebDriver browser;
 
     @Autowired
-    protected AppDetails app;
+    protected ProjectDetails app;
 }

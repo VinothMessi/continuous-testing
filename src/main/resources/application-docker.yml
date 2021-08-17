@@ -1,0 +1,5 @@
+hub:
+  protocol: http
+  host: localhost
+  port: 4444
+  endpoint: /wd/hub/

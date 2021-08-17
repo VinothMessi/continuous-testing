@@ -1,0 +1,13 @@
+selenoid:
+  protocol: http
+  host: localhost
+  port: 4444
+  endpoint: /wd/hub/
+  version: 89.0
+  enableVNC: true
+  enableVideo: true
+  videoFile: ${project.name}_${browser}_${selenoid.version}
+  videoFormat: .mp4
+  enableLog: true
+  logFile: ${project.name}_${browser}_${selenoid.version}
+  logFormat: .log
