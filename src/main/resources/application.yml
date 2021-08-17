@@ -1,1 +1,8 @@
+browser: headlessFirefox
 
+app:
+  url: https://vins-udemy.s3.amazonaws.com/sb/visa/udemy-visa.html
+
+spring:
+  profiles:
+    active: local

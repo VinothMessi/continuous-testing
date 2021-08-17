@@ -7,6 +7,9 @@ import org.testng.annotations.Test;
 public class VisaRegistration extends BaseTest {
     @Test
     public void visaRegistration() {
-        System.out.println("This is my Test case");
+        browser.manage().window().maximize();
+        browser.get(app.getUrl());
+        System.out.println("Page Title:" + browser.getTitle());
+        browser.quit();
     }
 }
