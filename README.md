@@ -24,5 +24,9 @@ Continuous Testing pipeline using GCP (Spring Boot/Java/Maven/Selenium/TestNG)
       2. Create Docker Browsers configuration -> **@Bean** for chrome and firefox -> @Profile("docker-grid")
       3. Create Selenoid Browsers configuration -> **@Bean** for chrome,firefox and edge -> @Profile("selenoid-grid")
       
+![image](https://user-images.githubusercontent.com/34208574/129774102-bd6d7705-9540-4763-aead-5f2f4767e05f.png)
+
+
+      
  
 
