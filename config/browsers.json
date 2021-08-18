@@ -1,0 +1,62 @@
+{
+  "chrome": {
+    "default": "91.0",
+    "versions": {
+      "91.0": {
+        "image": "selenoid/chrome:91.0",
+        "port": "4444",
+        "path": "/"
+      },
+      "90.0": {
+        "image": "selenoid/chrome:90.0",
+        "port": "4444",
+        "path": "/"
+      },
+      "89.0": {
+        "image": "selenoid/chrome:89.0",
+        "port": "4444",
+        "path": "/"
+      }
+    }
+  },
+  "firefox": {
+    "default": "89.0",
+    "versions": {
+      "89.0": {
+        "image": "selenoid/firefox:89.0",
+        "port": "4444",
+        "path": "/wd/hub"
+      },
+      "88.0": {
+        "image": "selenoid/firefox:88.0",
+        "port": "4444",
+        "path": "/wd/hub"
+      },
+      "87.0": {
+        "image": "selenoid/firefox:87.0",
+        "port": "4444",
+        "path": "/wd/hub"
+      }
+    }
+  },
+  "MicrosoftEdge": {
+    "default": "91.0",
+    "versions": {
+      "91.0": {
+        "image": "browsers/edge:91.0",
+        "port": "4444",
+        "path": "/"
+      },
+      "90.0": {
+        "image": "browsers/edge:90.0",
+        "port": "4444",
+        "path": "/"
+      },
+      "89.0": {
+        "image": "browsers/edge:89.0",
+        "port": "4444",
+        "path": "/"
+      }
+    }
+  }
+}
