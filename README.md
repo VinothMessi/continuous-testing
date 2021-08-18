@@ -25,8 +25,5 @@ Continuous Testing pipeline using GCP (Spring Boot/Java/Maven/Selenium/TestNG)
       3. Create Selenoid Browsers configuration -> **@Bean** for chrome,firefox and edge -> @Profile("selenoid-grid")
       
 ![image](https://user-images.githubusercontent.com/34208574/129774102-bd6d7705-9540-4763-aead-5f2f4767e05f.png)
-
-
-      
- 
-
+![image](https://user-images.githubusercontent.com/34208574/129863172-d710becf-f55f-4c90-b627-240343d1b397.png)
+![image](https://user-images.githubusercontent.com/34208574/129863297-b8fea912-c102-41f6-9169-5351a0869d9e.png)
