@@ -69,6 +69,13 @@
 			<artifactId>awaitility</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.assertthat/selenium-shutterbug -->
+		<dependency>
+			<groupId>com.assertthat</groupId>
+			<artifactId>selenium-shutterbug</artifactId>
+			<version>1.5</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.awaitility/awaitility-proxy -->
 		<dependency>
 			<groupId>org.awaitility</groupId>
