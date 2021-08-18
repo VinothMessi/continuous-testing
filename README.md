@@ -34,5 +34,9 @@ Continuous Testing pipeline using GCP (Spring Boot/Java/Maven/Selenium/TestNG)
       
 ![image](https://user-images.githubusercontent.com/34208574/129940587-402322d5-c667-41a7-8f0a-25802b461a7b.png)
       
-      2. Create docker-compose files for disposable/scalable Docker/Selenoid grids ---> docker-grid.yml && selenoid-grid.yml
+**Create docker-compose files for disposable/scalable Docker/Selenoid grids ---> docker-grid.yml && selenoid-grid.yml**
+      
+Access docker-grid using: http://localhost:4444/grid/console
+
+Access selenoid-grid using: http://localhost:8090/#/ (Live Preview)
       
