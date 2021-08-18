@@ -1,4 +1,4 @@
-browser: headlessFirefox
+browser: chrome
 timeOut: 30
 
 project:
@@ -9,7 +9,7 @@ project:
   subHeader: Fill out the form carefully for registration
 
 report:
-  name: Test_Automation_Bot
+  name: Continuous_Testing
   path: ${user.dir}/results/reports/
 
 snapshot:
