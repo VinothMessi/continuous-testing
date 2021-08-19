@@ -42,12 +42,27 @@ Access selenoid-grid using: http://localhost:8090/#/ (Live Preview)
 
 **Configuring Jenkins Master in GCP:**
 
+**VM1:**
+
 Create a VM (Ubuntu 18.0.4) in GCP and name it as Jenkins-Master
 
 ![image](https://user-images.githubusercontent.com/34208574/130090677-5f528417-cf6b-4cfb-a96e-b220842100a8.png)
 
 1. Install configure Java 11, Maven 3.8.2, GIT and Jenkins in the above VM using the ---> Installing-Jenkins.text file
 2. Configure the initialAdministrator password and Install all the default plugins
-3. Make sure you can access the Jenkins master using external IP
-4. Create a Maven project and create a job which pulls the code from GIT and package it
+3. Create a Maven project and create a job which pulls the code from GIT and package it
+
+Access Jenkins using: http://<machine IP>:8080/
+
+**VM2:**
       
+Create a VM (Ubuntu 18.0.4) in GCP and name it as JFrog-Artifactory
+
+![image](https://user-images.githubusercontent.com/34208574/130112243-bbfaa834-ccca-47c5-89a3-932139417f7c.png)
+
+1. Install configure Java 11, Maven 3.8.2, GIT and J-Frog Artifactory in the above VM using the ---> Installing-JFrog-Artifactory.text file
+2. Login J-Frog Artifactory using **default username: admin and password: password**
+3. Change the password after the initial login
+4. Create **2 local repositories : one for release and the another for snapshots**
+  
+Access J-Frog Artifactory using: http://<machine IP>:8081/artifactory
