@@ -91,3 +91,5 @@ Email Extension Template
 *******************************************************************************************************************
 
 Step 8 : Global Tools Settings - In Jenkins Console - JAVA , MAVEN, GIT
+
+Acces the portal using: http://<machineIP>:8080/

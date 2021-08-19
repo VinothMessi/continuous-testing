@@ -1,0 +1,52 @@
+#Before installing packages on Ubuntu
+apt-get update
+apt-get dist-upgrade
+apt-get autoremove
+
+Step 1 : Install java/maven in ubuntu 18.04
+sudo -i (get to root user)
+apt-get update
+apt-get install openjdk-11-jdk
+apt-get update
+wget https://archive.apache.org/dist/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.tar.gz
+tar xvf apache-maven-3.8.2-bin.tar.gz
+mv apache-maven-3.8.2  /usr/local/apache-maven
+
+Step 2 : Set Java and Maven home in environment variables
+vim ~/.bash_profile
+
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin
+export M2_HOME=/usr/local/apache-maven
+export M2=$M2_HOME/bin 
+export PATH=$M2:$PATH
+
+source ~/.bash_profile
+*******************************************************************************************************************
+
+Step 3 : Install and configure git
+apt-get update
+apt-get install git
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+*******************************************************************************************************************
+
+Step 4 : Install J-Frog repository in Ubuntu 18.0.4
+#Add the repository key and file
+wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main"
+apt-get update
+apt-get install jfrog-artifactory-oss
+
+#Stop, Start and Enable J-Frog artifactory service
+systemctl stop artifactory.service;systemctl start artifactory.service;systemctl enable artifactory.service;
+systemctl status artifactory.service
+*******************************************************************************************************************
+
+Step 4 : Install J-Frog repository in Cent OS
+#Add the repository key and file
+wget https://bintray.com/jfrog/artifactory-rpms/rpm -O /etc/yum.repos.d/bintray-jfrog-artifactory-rpms.repo
+#Installing
+yum install jfrog-artifactory-oss
+
+Acces the portal using: http://<machineIP>:8081/artifactory/
