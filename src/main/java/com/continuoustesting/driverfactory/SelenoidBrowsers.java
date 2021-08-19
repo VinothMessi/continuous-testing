@@ -5,7 +5,7 @@ import java.net.URL;
 
 import com.continuoustesting.constants.Selenoid;
 import com.continuoustesting.helpers.Utilities;
-import com.continuoustesting.properties.SelenoidDetails;
+import com.continuoustesting.properties.HubDetails;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -22,7 +22,7 @@ import org.springframework.context.annotation.Profile;
 @Profile("selenoid")
 public class SelenoidBrowsers {
         @Autowired
-        private SelenoidDetails selenoid;
+        private HubDetails hub;
 
         @Lazy
         @Bean
@@ -30,16 +30,17 @@ public class SelenoidBrowsers {
         public WebDriver selenoidChrome() throws MalformedURLException {
                 var capabilities = new DesiredCapabilities();
                 capabilities.setCapability(Selenoid.BROWSER.label, "chrome");
-                capabilities.setCapability(Selenoid.VERSION.label, selenoid.getVersion());
-                capabilities.setCapability(Selenoid.VNC.label, selenoid.isEnableVNC());
-                capabilities.setCapability(Selenoid.VIDEO.label, selenoid.isEnableVideo());
-                capabilities.setCapability(Selenoid.VIDEO_NAME.label, selenoid.getVideoFile() + "_"
-                                + Utilities.currentDateTime() + selenoid.getVideoFormat());
-                capabilities.setCapability(Selenoid.LOG.label, selenoid.isEnableLog());
+                capabilities.setCapability(Selenoid.VERSION.label, hub.getVersion());
+                capabilities.setCapability(Selenoid.VNC.label, hub.isEnableVNC());
+                capabilities.setCapability(Selenoid.VIDEO.label, hub.isEnableVideo());
+                capabilities.setCapability(Selenoid.VIDEO_NAME.label,
+                                hub.getVideoFile() + "_" + Utilities.currentDateTime() + hub.getVideoFormat());
+                capabilities.setCapability(Selenoid.LOG.label, hub.isEnableLog());
                 capabilities.setCapability(Selenoid.LOG_NAME.label,
-                                selenoid.getLogFile() + "_" + Utilities.currentDateTime() + selenoid.getLogFormat());
-                return new RemoteWebDriver(new URL(selenoid.getProtocol() + "://" + selenoid.getHost() + ":"
-                                + selenoid.getPort() + selenoid.getEndpoint()), capabilities);
+                                hub.getLogFile() + "_" + Utilities.currentDateTime() + hub.getLogFormat());
+                return new RemoteWebDriver(new URL(
+                                hub.getProtocol() + "://" + hub.getHost() + ":" + hub.getPort() + hub.getEndpoint()),
+                                capabilities);
         }
 
         @Lazy
@@ -48,16 +49,17 @@ public class SelenoidBrowsers {
         public WebDriver selenoidFirefox() throws MalformedURLException {
                 var capabilities = new DesiredCapabilities();
                 capabilities.setCapability(Selenoid.BROWSER.label, "firefox");
-                capabilities.setCapability(Selenoid.VERSION.label, selenoid.getVersion());
-                capabilities.setCapability(Selenoid.VNC.label, selenoid.isEnableVNC());
-                capabilities.setCapability(Selenoid.VIDEO.label, selenoid.isEnableVideo());
-                capabilities.setCapability(Selenoid.VIDEO_NAME.label, selenoid.getVideoFile() + "_"
-                                + Utilities.currentDateTime() + selenoid.getVideoFormat());
-                capabilities.setCapability(Selenoid.LOG.label, selenoid.isEnableLog());
+                capabilities.setCapability(Selenoid.VERSION.label, hub.getVersion());
+                capabilities.setCapability(Selenoid.VNC.label, hub.isEnableVNC());
+                capabilities.setCapability(Selenoid.VIDEO.label, hub.isEnableVideo());
+                capabilities.setCapability(Selenoid.VIDEO_NAME.label,
+                                hub.getVideoFile() + "_" + Utilities.currentDateTime() + hub.getVideoFormat());
+                capabilities.setCapability(Selenoid.LOG.label, hub.isEnableLog());
                 capabilities.setCapability(Selenoid.LOG_NAME.label,
-                                selenoid.getLogFile() + "_" + Utilities.currentDateTime() + selenoid.getLogFormat());
-                return new RemoteWebDriver(new URL(selenoid.getProtocol() + "://" + selenoid.getHost() + ":"
-                                + selenoid.getPort() + selenoid.getEndpoint()), capabilities);
+                                hub.getLogFile() + "_" + Utilities.currentDateTime() + hub.getLogFormat());
+                return new RemoteWebDriver(new URL(
+                                hub.getProtocol() + "://" + hub.getHost() + ":" + hub.getPort() + hub.getEndpoint()),
+                                capabilities);
         }
 
         @Lazy
@@ -66,15 +68,16 @@ public class SelenoidBrowsers {
         public WebDriver selenoidEdge() throws MalformedURLException {
                 var capabilities = new DesiredCapabilities();
                 capabilities.setCapability(Selenoid.BROWSER.label, "MicrosoftEdge");
-                capabilities.setCapability(Selenoid.VERSION.label, selenoid.getVersion());
-                capabilities.setCapability(Selenoid.VNC.label, selenoid.isEnableVNC());
-                capabilities.setCapability(Selenoid.VIDEO.label, selenoid.isEnableVideo());
-                capabilities.setCapability(Selenoid.VIDEO_NAME.label, selenoid.getVideoFile() + "_"
-                                + Utilities.currentDateTime() + selenoid.getVideoFormat());
-                capabilities.setCapability(Selenoid.LOG.label, selenoid.isEnableLog());
+                capabilities.setCapability(Selenoid.VERSION.label, hub.getVersion());
+                capabilities.setCapability(Selenoid.VNC.label, hub.isEnableVNC());
+                capabilities.setCapability(Selenoid.VIDEO.label, hub.isEnableVideo());
+                capabilities.setCapability(Selenoid.VIDEO_NAME.label,
+                                hub.getVideoFile() + "_" + Utilities.currentDateTime() + hub.getVideoFormat());
+                capabilities.setCapability(Selenoid.LOG.label, hub.isEnableLog());
                 capabilities.setCapability(Selenoid.LOG_NAME.label,
-                                selenoid.getLogFile() + "_" + Utilities.currentDateTime() + selenoid.getLogFormat());
-                return new RemoteWebDriver(new URL(selenoid.getProtocol() + "://" + selenoid.getHost() + ":"
-                                + selenoid.getPort() + selenoid.getEndpoint()), capabilities);
+                                hub.getLogFile() + "_" + Utilities.currentDateTime() + hub.getLogFormat());
+                return new RemoteWebDriver(new URL(
+                                hub.getProtocol() + "://" + hub.getHost() + ":" + hub.getPort() + hub.getEndpoint()),
+                                capabilities);
         }
 }

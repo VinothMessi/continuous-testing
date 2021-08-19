@@ -16,7 +16,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class HubDetails {
     String protocol;
-    String host;
-    int port;
+    private String version;
+    private String host;
+    private int port;
     String endpoint;
+    private boolean enableVNC;
+    private boolean enableVideo;
+    private String videoFile;
+    private String videoFormat;
+    private boolean enableLog;
+    private String logFile;
+    private String logFormat;
 }
