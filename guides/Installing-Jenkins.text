@@ -1,0 +1,93 @@
+Step 1 : Install java/maven in ubuntu 18.04
+sudo -i (get to root user)
+apt-get update
+apt-get install openjdk-11-jdk
+apt update
+wget https://archive.apache.org/dist/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.tar.gz
+tar xvf apache-maven-3.8.2-bin.tar.gz
+mv apache-maven-3.8.2  /usr/local/apache-maven
+
+Step 2 : Set Java and Maven home in environment variables
+vim ~/.bash_profile
+
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin
+export M2_HOME=/usr/local/apache-maven
+export M2=$M2_HOME/bin 
+export PATH=$M2:$PATH
+
+source ~/.bash_profile
+*******************************************************************************************************************
+
+Step 1 : Install java/maven in Cent OS 7
+yum install epel-release  java-11-openjdk-devel vim wget ntp git -y
+systemctl stop firewalld;systemctl disable firewalld
+ntpdate pool.ntp.org
+wget https://archive.apache.org/dist/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.tar.gz
+tar xvf apache-maven-3.8.2-bin.tar.gz
+mv apache-maven-3.8.2  /usr/local/apache-maven
+
+Step 2 : Set Java and Maven home in environment variables
+vim ~/.bash_profile
+
+In this file
+
+export JAVA_HOME=/usr/lib/jvm/java-11
+export JRE_HOME=/usr/lib/jvm/java-11/jre
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin
+export M2_HOME=/usr/local/apache-maven
+export M2=$M2_HOME/bin 
+export PATH=$M2:$PATH
+
+source ~/.bash_profile
+*******************************************************************************************************************
+
+Step 3 : Install and configure git
+apt update
+apt install git
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+*******************************************************************************************************************
+
+Step 4 : Install Jenkins Ubuntu 18.0.4 LTS
+#Add the repository key to the system
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+#Install Jenkins and its dependencies
+sudo apt update
+sudo apt install jenkins
+
+#Start the Jenkins Service Persistantly
+systemctl restart jenkins;systemctl enable jenkins;systemctl status jenkins
+
+#Opening the Firewall
+sudo ufw allow 8080
+sudo ufw status
+*******************************************************************************************************************
+
+Step 5 : Install Jenkins Ubuntu Cent OS 7
+#Configure Jenkins Software Repository
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+
+#Configure Jenkins Key
+rpm --import https://pkg.jenkins.io/redhat/jenkins.io.Key
+
+#Install Jenkins
+yum install jenkins -y
+
+#Start the Jenkins Service Persistantly
+systemctl restart jenkins;systemctl enable jenkins;systemctl status jenkins
+*******************************************************************************************************************
+
+Step 6 : Get Administrator Password
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+#Install the necessary plugins
+dashboard view
+Build Pipeline
+Deploy to container
+Email Extension Template
+*******************************************************************************************************************
+
+Step 8 : Global Tools Settings - In Jenkins Console - JAVA , MAVEN, GIT
