@@ -39,4 +39,15 @@ Continuous Testing pipeline using GCP (Spring Boot/Java/Maven/Selenium/TestNG)
 Access docker-grid using: http://localhost:4444/grid/console
 
 Access selenoid-grid using: http://localhost:8090/#/ (Live Preview)
+
+**Configuring Jenkins Master in GCP:**
+
+Create a VM (Ubuntu 18.0.4) in GCP and name it as Jenkins-Master
+
+![image](https://user-images.githubusercontent.com/34208574/130090677-5f528417-cf6b-4cfb-a96e-b220842100a8.png)
+
+1. Install configure Java 11, Maven 3.8.2, GIT and Jenkins in the above VM using the ---> Installing-Jenkins.text file
+2. Configure the initialAdministrator password and Install all the default plugins
+3. Make sure you can access the Jenkins master using external IP
+4. Create a Maven project and create a job which pulls the code from GIT and package it
       
