@@ -21,7 +21,7 @@ COPY checkHub.sh checkHub.sh
 # Create an Image
 FROM openjdk:11-jre-slim
 
-RUN apk add curl jq
+RUN apt-get update && apt-get install -y curl && apt-get install -y jq
 
 WORKDIR continuous-testing
 
