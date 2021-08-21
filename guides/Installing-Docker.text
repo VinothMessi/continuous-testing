@@ -1,0 +1,24 @@
+Step 1: Installing dokcer in Ubuntu 18.0.4
+
+apt-get update
+
+#Install a few prerequisite packages
+apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+#Add the GPG key for the official Docker repository
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+#Add the Docker repository to APT sources
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+apt-get update
+
+#Install docker
+apt-cache policy docker-ce
+apt-get install docker-ce
+sudo systemctl start docker;sudo systemctl enable docker
+
+Step 2: Add Jenkins User into Docker group
+
+sudo usermod -aG docker jenkins
+id -nG
+su - jenkins
