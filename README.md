@@ -66,3 +66,20 @@ Create a VM (Ubuntu 18.0.4) in GCP and name it as JFrog-Artifactory
 4. Create **2 local repositories : one for release and the another for snapshots**
   
 Access J-Frog Artifactory using: http://<machine IP>:8081/artifactory
+  
+**Build Docker Image of you entire Source Code:**
+  
+  1. Create a Dockerfile at the root path
+  2. Use the maven base image for packaging the project as .jar files
+  3. Use jre-slim base image for building the image with all the necessary:
+      a. jars
+      b. dependacies
+      c. resources
+      d. results
+      e. pom.xml and testng.xml
+  4. Build the image with necessay tag name = **docker build --tag=<tagName>:<version> .**
+  5. Execute the above image to run a container 
+  6. Get inside the container to check wether all the files/resources/dependancies are present = docker run -it --entrypoint=bash <imagename>
+  
+ ![image](https://user-images.githubusercontent.com/34208574/130315179-a7a04aaa-5808-4d8e-ae6e-d786bc61376e.png)
+
