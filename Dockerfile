@@ -13,8 +13,6 @@ RUN mvn clean package -DskipTests
 
 # Copying reources
 COPY continuous-testing.xml continuous-testing.xml
-COPY resources resources
-COPY results results
 COPY config config
 COPY checkHub.sh checkHub.sh
 
@@ -33,8 +31,6 @@ COPY --from=stage1 continuous-testing/target/libs libs
 # Copying reources
 COPY pom.xml pom.xml
 COPY continuous-testing.xml continuous-testing.xml
-COPY resources resources
-COPY results results
 COPY config config
 COPY checkHub.sh checkHub.sh
 
