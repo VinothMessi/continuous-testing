@@ -3,7 +3,7 @@ hub:
   host: localhost
   port: 4444
   endpoint: /wd/hub/
-  version: 89.0
+  version: 91.0
   enableVNC: true
   enableVideo: true
   videoFile: ${project.name}_${browser}_${selenoid.version}
