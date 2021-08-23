@@ -24,6 +24,8 @@ pipeline {
         echo 'Docker image push done successfully'
       }
     }
-
   }
+  tools {
+        maven 'Maven 3.8.2'
+    }
 }
