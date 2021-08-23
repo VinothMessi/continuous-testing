@@ -20,9 +20,10 @@ pipeline {
     stage('Push docker image') {
       steps {
         echo 'Push image to docker hub'
-        sh 'docker image push --all-tags vinothmessi/continuous-testing:v1.0'
+        sh 'docker image push vinothmessi/continuous-testing:v1.0'
         echo 'Docker image push done successfully'
       }
     }
+
   }
 }
