@@ -17,6 +17,6 @@ snapshot:
 
 spring:
   profiles:
-    active: local
+    active: selenoid
   jpa:
     defer-datasource-initialization: true
