@@ -1,0 +1,69 @@
+version: "3.8"
+services:
+  HUB:
+    image: selenium/hub
+    container_name: docker-hub
+    networks:
+      - my-docker-grid
+    ports:
+      - "4444:4444"
+  CHROME:
+    image: selenium/node-chrome
+    depends_on:
+      - HUB
+    networks:
+      - my-docker-grid
+    environment:
+      - HUB_HOST=HUB
+      - HUB_PORT=4444
+    volumes:
+      - /dev/shm:/dev/shm
+    deploy:
+      replicas: 3
+  FIREFOX:
+    image: selenium/node-firefox
+    depends_on:
+      - HUB
+    networks:
+      - my-docker-grid
+    environment:
+      - HUB_HOST=HUB
+      - HUB_PORT=4444
+    volumes:
+      - /dev/shm:/dev/shm
+    deploy:
+      replicas: 3
+  CONTINUOUS-TESTING-CHROME:
+    image: continuoustesting:v1.0
+    depends_on:
+      - CHROME
+      - FIREFOX
+    networks:
+      - my-docker-grid
+    environment:
+      - PROFILE=docker
+      - BROWSER=chrome
+      - HOST=192.168.29.179
+      - PORT=4444
+      - MODULE=continuous-testing.xml
+    volumes:
+      - ./output/chrome:/continuous-testing/test-output
+  CONTINUOUS-TESTING-FIREFOX:
+    image: continuoustesting:v1.0
+    depends_on:
+      - CHROME
+      - FIREFOX
+    networks:
+      - my-docker-grid
+    environment:
+      - PROFILE=docker
+      - BROWSER=firefox
+      - HOST=192.168.29.179
+      - PORT=4444
+      - MODULE=continuous-testing.xml
+    volumes:
+      - ./output/firefox:/continuous-testing/test-output
+
+networks:
+  my-docker-grid:
+    name: docker-grid
