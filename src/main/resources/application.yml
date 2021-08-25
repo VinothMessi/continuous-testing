@@ -17,6 +17,6 @@ snapshot:
 
 spring:
   profiles:
-    active: selenoid
+    active: docker
   jpa:
     defer-datasource-initialization: true
