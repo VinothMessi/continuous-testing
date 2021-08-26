@@ -43,7 +43,7 @@ services:
     environment:
       - PROFILE=docker
       - BROWSER=chrome
-      - HOST=192.168.29.179
+      - HOST=34.125.27.54
       - PORT=4444
       - MODULE=continuous-testing.xml
     volumes:
@@ -58,7 +58,7 @@ services:
     environment:
       - PROFILE=docker
       - BROWSER=firefox
-      - HOST=192.168.29.179
+      - HOST=34.125.27.54
       - PORT=4444
       - MODULE=continuous-testing.xml
     volumes:
