@@ -9,6 +9,23 @@ pipeline {
       }
     }
 
+    stage('Selenium grid set-up and test execution') {
+      steps {
+        echo 'Setting up selenium grid and test execution'
+        sh 'docker-compose -f disposable-docker-grid.yml up -d'
+        sh 'sleep 30'
+        echo 'Selenium grid set-up and test execution done successfully'
+      }
+    }
+
+    stage('Disposable selenium grid tear-down') {
+      steps {
+        echo 'Bringing down selenium grid'
+        sh 'docker-compose -f disposable-docker-grid.yml down'
+        echo 'Tear down of selenium grid done successfully'
+      }
+    }
+
     stage('Push docker image') {
       steps {
         echo 'Try to push docker image'
@@ -16,6 +33,5 @@ pipeline {
         echo 'Docker image push done successfully'
       }
     }
-
   }
 }
