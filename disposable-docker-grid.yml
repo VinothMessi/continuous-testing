@@ -34,7 +34,7 @@ services:
     deploy:
       replicas: 3
   CONTINUOUS-TESTING-CHROME:
-    image: continuous-testing:v1.0
+    image: vinothmessi/continuous-testing:v1.0
     depends_on:
       - CHROME
       - FIREFOX
@@ -49,7 +49,7 @@ services:
     volumes:
       - ./output/chrome:/continuous-testing/test-output
   CONTINUOUS-TESTING-FIREFOX:
-    image: continuous-testing:v1.0
+    image: vinothmessi/continuous-testing:v1.0
     depends_on:
       - CHROME
       - FIREFOX
