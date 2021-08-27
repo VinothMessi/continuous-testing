@@ -10,14 +10,15 @@ import lombok.NoArgsConstructor;
 
 @Lazy
 @Configuration
-@ConfigurationProperties("project")
+@ConfigurationProperties("app")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProjectDetails {
-    String name;
-    String appUrl;
-    String appTitle;
+public
+class AppDetails {
+    String url;
+    String title;
     String header;
     String subHeader;
+    String college;
 }

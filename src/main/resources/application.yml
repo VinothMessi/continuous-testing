@@ -1,13 +1,6 @@
 browser: chrome
 timeOut: 30
 
-project:
-  name: Continuous-Testing
-  appUrl: https://vins-udemy.s3.amazonaws.com/sb/visa/udemy-visa.html
-  appTitle: VISA Registration Form
-  header: VISA Registration Form
-  subHeader: Fill out the form carefully for registration
-
 report:
   name: Continuous_Testing
   path: ${user.dir}/results/reports/
@@ -17,6 +10,6 @@ snapshot:
 
 spring:
   profiles:
-    active: docker
+    active: local,recap
   jpa:
     defer-datasource-initialization: true

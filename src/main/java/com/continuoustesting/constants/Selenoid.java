@@ -7,7 +7,6 @@ enum Selenoid {
 
     public final String label;
 
-    //private
     Selenoid(String label) {
         this.label = label;
     }

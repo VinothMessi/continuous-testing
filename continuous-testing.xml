@@ -6,7 +6,8 @@
 
         <classes>
 
-            <class name="com.continuoustesting.testcases.VisaRegistration" />
+            <class name="com.continuoustesting.testcases.VisaRegistration"/>
+            <class name="com.continuoustesting.testcases.Recap"/>
 
         </classes>
 
