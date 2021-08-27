@@ -163,7 +163,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>continuous-testing.xml</suiteXmlFile>
+                        <suiteXmlFile>recap.xml</suiteXmlFile>
+                        <suiteXmlFile>visa.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

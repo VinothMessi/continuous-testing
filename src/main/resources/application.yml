@@ -10,6 +10,6 @@ snapshot:
 
 spring:
   profiles:
-    active: local,recap
+    active: local,visa
   jpa:
     defer-datasource-initialization: true

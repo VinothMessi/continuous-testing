@@ -12,7 +12,7 @@ RUN mvn dependency:go-offline -B
 RUN mvn clean package -DskipTests
 
 # Copying reources
-COPY continuous-testing.xml continuous-testing.xml
+COPY visa.xml continuous-testing.xml
 COPY config config
 COPY checkHub.sh checkHub.sh
 
@@ -30,7 +30,7 @@ COPY --from=stage1 continuous-testing/target/libs libs
 
 # Copying reources
 COPY pom.xml pom.xml
-COPY continuous-testing.xml continuous-testing.xml
+COPY visa.xml continuous-testing.xml
 COPY config config
 COPY checkHub.sh checkHub.sh
 
