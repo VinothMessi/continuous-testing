@@ -1,0 +1,5 @@
+app:
+  url: https://vins-udemy.s3.amazonaws.com/sb/visa/udemy-visa.html
+  title: VISA Registration Form
+  header: VISA Registration Form
+  subHeader: Fill out the form carefully for registration

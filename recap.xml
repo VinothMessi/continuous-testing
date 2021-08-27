@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Continuous-Testing">
+
+    <test name="Regression-Testing">
+
+        <classes>
+
+            <class name="com.continuoustesting.testcases.Recap"/>
+
+        </classes>
+
+    </test>
+
+</suite>
