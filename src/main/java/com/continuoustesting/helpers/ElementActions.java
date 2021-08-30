@@ -83,28 +83,28 @@ class ElementActions {
 
     public
     void clickOn(WebElement element) {
-        if (isElementClickable(element)) {
+        if (isElementDisplayed(element) && isElementClickable(element)) {
             element.click();
         }
     }
 
     public
     void clear(WebElement element) {
-        if (isElementClickable(element)) {
+        if (isElementDisplayed(element) && isElementClickable(element)) {
             element.clear();
         }
     }
 
     public
     void type(String text, WebElement element) {
-        if (isElementClickable(element)) {
+        if (isElementDisplayed(element) && isElementClickable(element)) {
             element.sendKeys(text);
         }
     }
 
     public
     String getTextFrom(WebElement element) {
-        if (isElementDisplayed(element)) {
+        if (isElementDisplayed(element) && isElementClickable(element)) {
             return element.getText().trim();
         }
         return null;
@@ -112,7 +112,7 @@ class ElementActions {
 
     public
     void select(String value, WebElement element, ByAttribute type) {
-        if (isElementClickable(element)) {
+        if (isElementDisplayed(element) && isElementClickable(element)) {
             Select dropDown = new Select(element);
             switch (type) {
                 case TEXT:

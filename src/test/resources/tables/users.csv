@@ -1,0 +1,6 @@
+id,first_name,middle_name,last_name,from_country,to_country,birth_month,birth_day,birth_year,area_code,phone_number
+1,Lionel,Andreas,Messi,Argentina,France,JUNE,24,1987,+54,0123456789
+2,Cristiano,Ronaldo,dos Santos,Portugal,United Kingdom,FEBRUARY,5,1985,+351,1234567890
+3,Neymar,da Silva,Santos,Brazil,France,FEBRUARY,5,1992,+55,2345678901
+4,Virgil,van,Dĳk,Netherlands,United Kingdom,JULY,8,1991,+31,3456789012
+5,Mohamed,Salah,Hamed,Egypt,United Kingdom,JUNE,15,1992,+20,4567890123
