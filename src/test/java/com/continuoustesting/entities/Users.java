@@ -9,9 +9,9 @@ import org.hibernate.annotations.Proxy;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 @Data
 @Builder
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Proxy(lazy = false)

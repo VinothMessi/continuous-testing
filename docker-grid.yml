@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  HUB:
+    image: selenium/hub
+    container_name: docker-hub
+    networks:
+      - my-docker-grid
+    ports:
+      - "4444:4444"
+  CHROME:
+    image: selenium/node-chrome
+    depends_on:
+      - HUB
+    networks:
+      - my-docker-grid
+    environment:
+      - HUB_HOST=HUB
+      - HUB_PORT=4444
+    volumes:
+      - /dev/shm:/dev/shm
+    deploy:
+      replicas: 2
+  FIREFOX:
+    image: selenium/node-firefox
+    depends_on:
+      - HUB
+    networks:
+      - my-docker-grid
+    environment:
+      - HUB_HOST=HUB
+      - HUB_PORT=4444
+    volumes:
+      - /dev/shm:/dev/shm
+    deploy:
+      replicas: 2
+
+networks:
+  my-docker-grid:
+    name: docker-grid
