@@ -19,7 +19,7 @@ services:
     volumes:
       - /dev/shm:/dev/shm
     deploy:
-      replicas: 3
+      replicas: 2
   FIREFOX:
     image: selenium/node-firefox
     depends_on:
@@ -32,7 +32,7 @@ services:
     volumes:
       - /dev/shm:/dev/shm
     deploy:
-      replicas: 3
+      replicas: 2
   CONTINUOUS-TESTING-CHROME:
     image: vinothmessi/continuous-testing:v1.0
     depends_on:
@@ -41,11 +41,11 @@ services:
     networks:
       - my-docker-grid
     environment:
-      - PROFILE=docker,visa
+      - PROFILE=docker,recap
       - BROWSER=chrome
-      - HOST=34.125.27.54
+      - HOST=192.168.29.179
       - PORT=4444
-      - MODULE=visa.xml
+      - MODULE=recap.xml
     volumes:
       - ./output/chrome:/continuous-testing/test-output
   CONTINUOUS-TESTING-FIREFOX:
@@ -56,11 +56,11 @@ services:
     networks:
       - my-docker-grid
     environment:
-      - PROFILE=docker,visa
+      - PROFILE=docker,recap
       - BROWSER=firefox
-      - HOST=34.125.27.54
+      - HOST=192.168.29.179
       - PORT=4444
-      - MODULE=visa.xml
+      - MODULE=recap.xml
     volumes:
       - ./output/firefox:/continuous-testing/test-output
 
