@@ -12,6 +12,7 @@ RUN mvn dependency:go-offline -B
 RUN mvn clean package -DskipTests
 
 # Copying reources
+COPY resources resources
 COPY visa.xml visa.xml
 COPY recap.xml recap.xml
 COPY config config
@@ -31,6 +32,7 @@ COPY --from=stage1 continuous-testing/target/libs libs
 
 # Copying reources
 COPY pom.xml pom.xml
+COPY resources resources
 COPY visa.xml visa.xml
 COPY recap.xml recap.xml
 COPY config config

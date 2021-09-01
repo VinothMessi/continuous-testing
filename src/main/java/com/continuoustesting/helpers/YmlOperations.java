@@ -22,7 +22,7 @@ class YmlOperations {
         InputStream inputStream = null;
         try {
             inputStream = new FileInputStream(ResourceUtils.getFile(
-                    filePath + "/" + fileName));
+                    filePath + fileName));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

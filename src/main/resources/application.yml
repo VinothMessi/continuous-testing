@@ -6,7 +6,7 @@ report:
   path: ${user.dir}/results/reports/
 
 testdata:
-  path: classpath:testdata
+  path: ${user.dir}/resources/testdata/
   name: login.yml
 
 snapshot:
