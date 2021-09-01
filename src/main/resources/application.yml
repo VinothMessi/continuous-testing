@@ -5,6 +5,10 @@ report:
   name: Continuous_Testing
   path: ${user.dir}/results/reports/
 
+testdata:
+  path: classpath:testdata
+  name: login.yml
+
 snapshot:
   path: ${user.dir}/results/reports/snaps/
 
