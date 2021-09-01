@@ -33,7 +33,37 @@ services:
       - /dev/shm:/dev/shm
     deploy:
       replicas: 2
-  CONTINUOUS-TESTING-CHROME:
+  CONTINUOUS-TESTING-VISA-CHROME:
+    image: vinothmessi/continuous-testing:v1.0
+    depends_on:
+      - CHROME
+      - FIREFOX
+    networks:
+      - my-docker-grid
+    environment:
+      - PROFILE=docker,visa
+      - BROWSER=chrome
+      - HOST=192.168.29.179
+      - PORT=4444
+      - MODULE=visa.xml
+    volumes:
+      - ./output/chrome:/continuous-testing/test-output
+  CONTINUOUS-TESTING-VISA-FIREFOX:
+    image: vinothmessi/continuous-testing:v1.0
+    depends_on:
+      - CHROME
+      - FIREFOX
+    networks:
+      - my-docker-grid
+    environment:
+      - PROFILE=docker,visa
+      - BROWSER=firefox
+      - HOST=192.168.29.179
+      - PORT=4444
+      - MODULE=visa.xml
+    volumes:
+      - ./output/firefox:/continuous-testing/test-output
+  CONTINUOUS-TESTING-RECAP-CHROME:
     image: vinothmessi/continuous-testing:v1.0
     depends_on:
       - CHROME
@@ -48,7 +78,7 @@ services:
       - MODULE=recap.xml
     volumes:
       - ./output/chrome:/continuous-testing/test-output
-  CONTINUOUS-TESTING-FIREFOX:
+  CONTINUOUS-TESTING-RECAP-FIREFOX:
     image: vinothmessi/continuous-testing:v1.0
     depends_on:
       - CHROME
@@ -62,7 +92,7 @@ services:
       - PORT=4444
       - MODULE=recap.xml
     volumes:
-      - ./output/firefox:/continuous-testing/test-output
+      - ./output/chrome:/continuous-testing/test-output
 
 networks:
   my-docker-grid:
