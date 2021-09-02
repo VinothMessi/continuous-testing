@@ -6,7 +6,7 @@ services:
     depends_on:
       - selenoid
     ports:
-      - "8080:8080"
+      - "8090:8080"
     links:
       - selenoid
     command: [ "--selenoid-uri", "http://selenoid:4444" ]
