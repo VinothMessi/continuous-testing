@@ -1,13 +1,13 @@
 hub:
   protocol: http
-  host: localhost
+  host: 192.168.29.179
   port: 4444
   endpoint: /wd/hub/
   version: 91.0
   enableVNC: true
   enableVideo: true
-  videoFile: ${project.name}_${browser}_${selenoid.version}
+  videoFile: ${project.name}_${browser}_${hub.version}
   videoFormat: .mp4
   enableLog: true
-  logFile: ${project.name}_${browser}_${selenoid.version}
+  logFile: ${project.name}_${browser}_${hub.version}
   logFormat: .log
