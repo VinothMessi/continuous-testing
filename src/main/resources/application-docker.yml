@@ -1,5 +1,5 @@
 hub:
   protocol: http
-  host: localhost
+  host: 192.168.29.179
   port: 4444
   endpoint: /wd/hub/

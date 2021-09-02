@@ -1,5 +1,8 @@
-browser: chrome
+browser: firefox
 timeOut: 30
+
+project:
+  name: Continuous-Testing
 
 report:
   name: Continuous_Testing
@@ -14,6 +17,6 @@ snapshot:
 
 spring:
   profiles:
-    active: local,recap
+    active: selenoid,visa
   jpa:
     defer-datasource-initialization: true
