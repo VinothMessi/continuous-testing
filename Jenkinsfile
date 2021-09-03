@@ -32,7 +32,7 @@ pipeline {
         echo 'Remove all containers'
         sh 'docker-compose -f disposable-docker-grid.yml down'
         echo 'Removed all containers successfully'
-        sh 'cd /var/lib/jenkins/workspace/;sudo rm -rf *;sudo rm *'
+        sh 'cd /var/lib/jenkins/workspace/;sudo rm -r *'
       }
     }
 
