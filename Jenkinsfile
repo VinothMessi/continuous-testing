@@ -9,11 +9,11 @@ pipeline {
       }
     }
 
-    stage('Test execution') {
+    stage('Push Image') {
       steps {
-        echo 'Initiate test execution'
-        sh 'docker-compose -f disposable-docker-grid.yml up -d'
-        echo 'Test execution done successfully'
+        echo 'Push Docker image'
+        sh 'docker push vinothmessi/continuous-testing'
+        echo 'Image pushed successfully'
       }
     }
 
