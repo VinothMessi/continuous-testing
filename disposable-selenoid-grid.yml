@@ -26,7 +26,7 @@ services:
       - selenoid
     command: [ "--selenoid-uri", "http://selenoid:4444" ]
   CONTINUOUS-TESTING-VISA-EDGE:
-    image: vinothmessi/continuous-testing:v1.0
+    image: vinothmessi/continuous-testing
     depends_on:
       - selenoid
       - selenoid-ui
@@ -38,7 +38,7 @@ services:
       - PORT=4444
       - MODULE=visa.xml
   CONTINUOUS-TESTING-RECAP-EDGE:
-    image: vinothmessi/continuous-testing:v1.0
+    image: vinothmessi/continuous-testing
     depends_on:
       - selenoid
       - selenoid-ui

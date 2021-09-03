@@ -34,7 +34,7 @@ services:
     deploy:
       replicas: 2
   CONTINUOUS-TESTING-VISA-CHROME:
-    image: vinothmessi/continuous-testing:v1.0
+    image: vinothmessi/continuous-testing
     depends_on:
       - CHROME
       - FIREFOX
@@ -49,7 +49,7 @@ services:
     volumes:
       - ./output/chrome:/continuous-testing/test-output
   CONTINUOUS-TESTING-VISA-FIREFOX:
-    image: vinothmessi/continuous-testing:v1.0
+    image: vinothmessi/continuous-testing
     depends_on:
       - CHROME
       - FIREFOX
@@ -64,7 +64,7 @@ services:
     volumes:
       - ./output/firefox:/continuous-testing/test-output
   CONTINUOUS-TESTING-RECAP-CHROME:
-    image: vinothmessi/continuous-testing:v1.0
+    image: vinothmessi/continuous-testing
     depends_on:
       - CHROME
       - FIREFOX
@@ -79,7 +79,7 @@ services:
     volumes:
       - ./output/chrome:/continuous-testing/test-output
   CONTINUOUS-TESTING-RECAP-FIREFOX:
-    image: vinothmessi/continuous-testing:v1.0
+    image: vinothmessi/continuous-testing
     depends_on:
       - CHROME
       - FIREFOX
