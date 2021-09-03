@@ -17,5 +17,11 @@ pipeline {
       }
     }
 
+    stage('Test execution') {
+      steps {
+        echo 'Initiate test execution'
+      }
+    }
+
   }
 }
