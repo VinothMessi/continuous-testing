@@ -9,5 +9,13 @@ pipeline {
       }
     }
 
+    stage('Test execution') {
+      steps {
+        echo 'Initiate test execution'
+        sh 'docker-compose -f disposable-docker-grid.yml up -d'
+        echo 'Test execution done successfully'
+      }
+    }
+
   }
 }
