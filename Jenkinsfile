@@ -5,6 +5,9 @@ pipeline {
       steps {
         echo 'Build Docker image'
         fileExists 'Dockerfile'
+        sh '''cd /var/lib/jenkins/workspace
+rm -r *
+rm *'''
         sh 'docker build --tag=vinothmessi/continuous-testing .'
         echo 'Docker Image built successfully'
       }
