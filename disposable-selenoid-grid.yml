@@ -34,7 +34,7 @@ services:
     environment:
       - PROFILE=selenoid,visa
       - BROWSER=edge
-      - HOST=192.168.29.179
+      - HOST=34.125.221.135
       - PORT=4444
       - MODULE=visa.xml
   CONTINUOUS-TESTING-RECAP-EDGE:
@@ -46,6 +46,6 @@ services:
     environment:
       - PROFILE=selenoid,recap
       - BROWSER=edge
-      - HOST=192.168.29.179
+      - HOST=34.125.221.135
       - PORT=4444
       - MODULE=recap.xml
