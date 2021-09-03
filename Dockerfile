@@ -16,6 +16,7 @@ COPY resources resources
 COPY visa.xml visa.xml
 COPY recap.xml recap.xml
 COPY config config
+COPY output output
 COPY checkHub.sh checkHub.sh
 
 # Create an Image
@@ -36,6 +37,7 @@ COPY resources resources
 COPY visa.xml visa.xml
 COPY recap.xml recap.xml
 COPY config config
+COPY output output
 COPY checkHub.sh checkHub.sh
 
 ENTRYPOINT sh checkHub.sh
