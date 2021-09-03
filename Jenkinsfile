@@ -13,7 +13,7 @@ pipeline {
       steps {
         echo 'Setting up selenium grid and test execution'
         sh 'docker-compose -f disposable-docker-grid.yml up -d'
-        sh 'sleep 30'
+        sh 'sleep 120'
         echo 'Selenium grid set-up and test execution done successfully'
       }
     }
@@ -33,5 +33,6 @@ pipeline {
         echo 'Docker image push done successfully'
       }
     }
+
   }
 }
