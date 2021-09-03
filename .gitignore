@@ -1,7 +1,5 @@
 HELP.md
 output/
-config/logs
-config/videos
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
