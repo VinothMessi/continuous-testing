@@ -4,6 +4,7 @@ pipeline {
     stage('Build Image') {
       steps {
         echo 'Build Docker image'
+        fileExists 'Dockerfile'
         sh 'docker build --tag=vinothmessi/continuous-testing .'
         echo 'Docker Image built successfully'
       }
@@ -21,7 +22,16 @@ pipeline {
       steps {
         echo 'Initiate test execution'
         sh 'docker-compose -f disposable-docker-grid.yml up -d'
+        sleep 120
         echo 'Test execution done successfully'
+      }
+    }
+
+    stage('Dispose Test infra') {
+      steps {
+        echo 'Remove all containers'
+        sh 'docker-compose -f disposable-docker-grid.yml down'
+        echo 'Removed all containers successfully'
       }
     }
 
