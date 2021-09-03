@@ -4,10 +4,8 @@ pipeline {
     stage('Build Image') {
       steps {
         echo 'Build Docker image'
+        sh 'cd /var/lib/jenkins/workspace/;sudo rm -r *;sudo rm *'
         fileExists 'Dockerfile'
-        sh '''cd /var/lib/jenkins/workspace
-rm -r *
-rm *'''
         sh 'docker build --tag=vinothmessi/continuous-testing .'
         echo 'Docker Image built successfully'
       }
