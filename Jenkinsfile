@@ -4,7 +4,6 @@ pipeline {
     stage('Build Image') {
       steps {
         echo 'Build Docker image'
-        sh 'cd /var/lib/jenkins/workspace/;sudo rm -rf *;sudo rm *'
         fileExists 'Dockerfile'
         sh 'docker build --tag=vinothmessi/continuous-testing .'
         echo 'Docker Image built successfully'
@@ -33,6 +32,7 @@ pipeline {
         echo 'Remove all containers'
         sh 'docker-compose -f disposable-docker-grid.yml down'
         echo 'Removed all containers successfully'
+        sh 'cd /var/lib/jenkins/workspace/;sudo rm -rf *;sudo rm *'
       }
     }
 
