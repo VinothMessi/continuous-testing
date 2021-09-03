@@ -1,4 +1,4 @@
-browser: firefox
+browser: chrome
 timeOut: 30
 
 project:
@@ -17,6 +17,6 @@ snapshot:
 
 spring:
   profiles:
-    active: selenoid,visa
+    active: selenoid,recap
   jpa:
     defer-datasource-initialization: true

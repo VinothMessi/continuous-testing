@@ -43,7 +43,7 @@ services:
     environment:
       - PROFILE=docker,visa
       - BROWSER=chrome
-      - HOST=34.125.221.135
+      - HOST=192.168.29.179
       - PORT=4444
       - MODULE=visa.xml
     volumes:
@@ -58,7 +58,7 @@ services:
     environment:
       - PROFILE=docker,visa
       - BROWSER=firefox
-      - HOST=34.125.221.135
+      - HOST=192.168.29.179
       - PORT=4444
       - MODULE=visa.xml
     volumes:
@@ -73,7 +73,7 @@ services:
     environment:
       - PROFILE=docker,recap
       - BROWSER=chrome
-      - HOST=34.125.221.135
+      - HOST=192.168.29.179
       - PORT=4444
       - MODULE=recap.xml
     volumes:
@@ -88,7 +88,7 @@ services:
     environment:
       - PROFILE=docker,recap
       - BROWSER=firefox
-      - HOST=34.125.221.135
+      - HOST=192.168.29.179
       - PORT=4444
       - MODULE=recap.xml
     volumes:

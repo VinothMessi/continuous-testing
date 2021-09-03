@@ -11,13 +11,25 @@ services:
       - "./config/logs:/opt/selenoid/logs"
     environment:
       - OVERRIDE_VIDEO_OUTPUT_DIR=/C/Passion/dev-ops/continuous-testing/config/video
-    command: [ "-conf", "/etc/selenoid/browsers.json", "-video-recorder-image", "selenoid/video-recorder:7.1", "-video-output-dir", "/opt/selenoid/video", "-log-output-dir", "/opt/selenoid/logs" ]
+    command: [ "-conf", "/etc/selenoid/browsers.json", "-video-output-dir", "/opt/selenoid/video", "-log-output-dir", "/opt/selenoid/logs" ]
     ports:
       - "4444:4444"
+  selenoid-ui:
+    image: aerokube/selenoid-ui:latest-release
+    container_name: selenoid-ui
+    network_mode: bridge
+    depends_on:
+      - selenoid
+    ports:
+      - "8090:8080"
+    links:
+      - selenoid
+    command: [ "--selenoid-uri", "http://selenoid:4444" ]
   CONTINUOUS-TESTING-VISA-EDGE:
     image: vinothmessi/continuous-testing:v1.0
     depends_on:
       - selenoid
+      - selenoid-ui
     network_mode: bridge
     environment:
       - PROFILE=selenoid,visa
@@ -29,6 +41,7 @@ services:
     image: vinothmessi/continuous-testing:v1.0
     depends_on:
       - selenoid
+      - selenoid-ui
     network_mode: bridge
     environment:
       - PROFILE=selenoid,recap
@@ -36,6 +49,3 @@ services:
       - HOST=192.168.29.179
       - PORT=4444
       - MODULE=recap.xml
-
-  # for starting selenoid-ui
-  # docker run -d --name selenoid-ui --link selenoid -p 8090:8080 aerokube/selenoid-ui:latest-release --selenoid-uri=http://selenoid:4444
